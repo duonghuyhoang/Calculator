@@ -59,14 +59,17 @@ $(document).ready(function() {
             showResult(result)
             showInput(showNumResult)
         }else if(value == '.') {
-                if(firstValue) {
+                if( firstValue.startsWith('.')) {
                     firstValue += value;
+                    '0' + firstValue
                     showNumResult += value;   
                 }
-                else {
+                else  {
                     secondValue += value;
+                    firstValue += value; 
                     showNumResult += value;   
                 }
+                
         }else if(value == 'percent') {
                 if (secondValue) {
                     showNumResult = showNumResult.slice(0,-secondValue.length)
